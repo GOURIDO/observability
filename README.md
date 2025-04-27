@@ -1,47 +1,49 @@
-# Observability with Prometheus, Loki, Jaeger, and Grafana
+# Observability Stack with Docker Compose
 
-This project demonstrates the integration of **Prometheus**, **Loki**, **Jaeger**, and **Grafana** for monitoring and logging in a containerized environment. It includes a Flask application with custom logs, along with the necessary configurations for scraping metrics, tracing requests, and visualizing logs and metrics on Grafana dashboards.
+This project sets up an observability stack using Docker Compose. It includes Prometheus for metrics collection, Grafana for visualization, Jaeger for tracing, and Loki for log aggregation. Additionally, it runs a simple Flask application with custom logging.
 
-## Project Overview
+## Project Structure
 
-The project includes:
-- A sample Flask application with custom logging.
-- Prometheus for scraping metrics.
-- Loki for log aggregation and visualization.
-- Jaeger for tracing HTTP requests.
-- Grafana dashboards to display metrics and logs.
-
-
+- **docker-compose.yml**: Configuration for the entire observability stack.
+- **flask.py**: A simple Flask app with custom logging.
+- **loki/**: Configuration files for Loki log aggregation.
+- **monitoring_screenshots/**: Contains screenshots of metrics, logs, and traces for report purposes.
+- **Insights.pdf**: A report providing insights and analysis of the project.
 
 ## Getting Started
 
-To get the project up and running locally, follow these steps:
+Follow the steps below to build and start the containers:
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/GOURIDO/observability.git
-   cd observability
-Build and start the containers using Docker Compose:
+### Prerequisites
 
+- Ensure you have Docker and Docker Compose installed on your system.
 
+### Build and Start the Containers
+
+```bash
 docker-compose up -d
-Access the following services:
+```
 
-Prometheus: http://localhost:9090
+### Accessing the Services
 
-Grafana: http://localhost:3000
+Once the containers are up and running, you can access the following services:
 
-Jaeger: http://localhost:5775
+- **Prometheus**: [http://localhost:9090](http://localhost:9090)
+- **Grafana**: [http://localhost:3000](http://localhost:3000)
+- **Jaeger**: [http://localhost:5775](http://localhost:5775)
 
-Check the logs and metrics from the Grafana dashboard, and view traces on Jaeger.
+### Checking Logs and Metrics
 
-Project Structure
-docker-compose.yml: Configuration for the entire observability stack.
+1. **Grafana Dashboard**: Use Grafana to view metrics and logs collected from the Flask application.
+2. **Jaeger Traces**: View traces and spans for the application in Jaeger.
 
-flask.py: A simple Flask app with custom logging.
+## Monitoring Insights
 
-loki/: Configuration for Loki log aggregation.
+- Navigate to the `monitoring_screenshots/` directory to view screenshots showcasing the metrics, logs, and traces captured during the monitoring process.
+- For more detailed insights and analysis, refer to the `Insights.pdf` report.
 
-monitoring_screenshots/: Screenshots of metrics, logs, and traces for report purposes.
+## Contribution
 
-Insights.pdf: Report containing insights and analysis of the project.
+Contributions to improve this project are welcome. Feel free to open issues or create pull requests.
+
+
